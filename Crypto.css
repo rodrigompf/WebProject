@@ -8,4 +8,23 @@ body {
     background-color: #333;
     background-image: 'https://i.pinimg.com/originals/1d/d5/96/1dd596926e2ac4272fd3b8e7218a2daf.gif';
   }
+  .currency-name{
+    color: black;
+  }
+  .div-values{
+    display: flex;
+    flex-direction: column;
+  }
+  .eur-value{
+    font-size: 12.5pt;
+    color: rgb(54, 54, 122);
+  }
   
+  .eur-change{
+    font-size: 10.5pt;
+    opacity: .75;
+  }
+  
+  .currency-coin{
+    font-size: 14pt;
+  }
