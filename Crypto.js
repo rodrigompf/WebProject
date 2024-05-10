@@ -39,7 +39,7 @@ xhr.onload = function () {
         const logoDiv = document.createElement('div');
         logoDiv.className = 'coin-logo';
         const logoImg = document.createElement('img');
-        logoImg.src = `images/${item}.png`;
+        logoImg.src = `imagensdasmoedas/${item}.png`;
         logoImg.style.width = '30px';
         logoImg.style.height = '30px';
         logoDiv.appendChild(logoImg);
