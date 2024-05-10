@@ -1,3 +1,4 @@
+
 // Get ApiKey
 const apiKey = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Csolana%2Ctron%2Ctether%2Ckucoin-shares%2Cpepe%2Cdai%2Csei-network%2Ctezos%2Cretardio%2Cgigachad-2%2Cpedro-the-raccoon&vs_currencies=eur&include_24hr_change=true";
 
@@ -66,6 +67,31 @@ xhr.onload = function () {
             divPrincipal.classList.add("positive-change");
         }
 
+        const inputInicial = document.createElement('input');
+    inputInicial.type = 'number';
+    inputInicial.valueMin = 1;
+    inputInicial.value = 1;
+    
+    const inputConvertido = document.createElement('input');
+    inputConvertido.type = 'text';
+    inputConvertido.disabled = true;
+    inputConvertido.value = value.eur + "€";
+    
+    inputInicial.addEventListener('change', ()=>{
+      let v = parseInt(inputInicial.value);
+      if (v < 1) inputInicial.value = 1;
+      inputConvertido.value = inputInicial.value * value.eur + "€";
+    });
+    const inputDivs = document.createElement('div');
+    
+    inputDivs.appendChild(inputInicial);
+    inputDivs.appendChild(inputConvertido);
+
+    inputDivs.className = "div-inputs"
+    divMoeda.appendChild(inputDivs);
+
+
+
         // Anexar o contentor de moeda ao contentor principal
         divMoeda.appendChild(divPrincipal);
         divMoeda.className = "div-content"
@@ -80,3 +106,4 @@ xhr.send();
 
 // Selecionar o elemento contentor
 const cnt = document.querySelector('.Moeda');
+

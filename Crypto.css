@@ -28,3 +28,96 @@ body {
   .currency-coin{
     font-size: 14pt;
   }
+
+  .container {
+    width: fit-content;
+    height: min-content;
+    margin-top: 1rem !important;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  .currency {
+    width: 100%;
+    padding: 12px;
+    background-color: #2b5063 !important;
+    border-radius: 11px;
+    margin: 35px    ;
+    font-weight: bold;
+    font-size: 16px;
+    color: #8fffe3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 200ms ease-in-out;
+    user-select: none;
+  }
+  
+  .currency:hover {
+    transform: scale(1.075);
+  }
+  
+  .coin-logo{
+    min-width: 50px;
+    width: auto;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .coin-logo img{
+    width: 70%;
+    height: 70%;
+  }
+  
+  .negative-change {
+    color: red;
+  }
+  
+  .positive-change {
+    color: green;
+  }
+
+  .separator {
+    margin: 0 7.5px;
+  }
+
+  .container2 label {
+    color: white;
+  }
+  
+  .div-content{
+    width: 100%;
+    display: flex;
+  }
+  
+  .div-inputs{
+    width: fit-content;
+    display: inline-flex;
+    margin: 8px 16px;
+  }
+  
+  .div-inputs input {
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: center;
+  }
+  
+  input[type=number],
+  input[type=text]:disabled{
+    width: auto;
+    min-width: 75px;
+    background-color: white;
+    border: none;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+  {
+    visibility: visible;
+    height: 35px;
+    margin: 0;
+  }
