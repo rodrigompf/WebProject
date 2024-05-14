@@ -1,4 +1,3 @@
-
 // Get ApiKey
 const apiKey = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Csolana%2Ctron%2Ctether%2Ckucoin-shares%2Cpepe%2Cdai%2Csei-network%2Ctezos%2Cretardio%2Cgigachad-2%2Cpedro-the-raccoon&vs_currencies=eur&include_24hr_change=true";
 
@@ -7,28 +6,27 @@ xhr.open("GET", apiKey);
 xhr.responseType = 'json';
 xhr.onload = function () {
 
-    // Criar elementos separados para cada parte do texto
-    const NomeMoeda = document.createElement('span');
-    NomeMoeda.className = 'currency-name currency-coin';
-
-    const Separados = document.createElement('p');
-    Separados.textContent = "➜";
-    Separados.className = 'currency-name separator';
-
-    const divValores = document.createElement('div');
-    divValores.classList.add('div-values');
-
-    const ValorEuro = document.createElement('span');
-    ValorEuro.className = 'eur-value';
-
-    const EuroChange = document.createElement('span');
-    EuroChange.className = 'eur-change';
-
     const result = this.response;
     for (const item in result) {
         const divMoeda = document.createElement('div');
         const value = result[item];
         const divPrincipal = document.createElement('div');
+
+        // Criar elementos separados para cada parte do texto
+        const NomeMoeda = document.createElement('span');
+        NomeMoeda.className = 'currency-name currency-coin';
+
+        const Separados = document.createElement('p');
+        Separados.textContent = "➜";
+        Separados.className = 'currency-name separator';
+        const divValores = document.createElement('div');
+        divValores.classList.add('div-values');
+
+        const ValorEuro = document.createElement('span');
+        ValorEuro.className = 'eur-value';
+
+        const EuroChange = document.createElement('span');
+        EuroChange.className = 'eur-change';
 
         // Definir valores para o nome da moeda, valor em euros e alteração em euros
         NomeMoeda.textContent = item;
@@ -106,4 +104,3 @@ xhr.send();
 
 // Selecionar o elemento contentor
 const cnt = document.querySelector('.Moeda');
-

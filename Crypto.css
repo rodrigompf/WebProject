@@ -1,6 +1,4 @@
 body {
-    width: 100vw;
-    height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center; 
@@ -17,7 +15,7 @@ body {
   }
   .eur-value{
     font-size: 12.5pt;
-    color: rgb(54, 54, 122);
+    color: rgb(127, 127, 251);
   }
   
   .eur-change{
@@ -69,8 +67,8 @@ body {
     place-items: center;
   }
   .coin-logo img{
-    width: 70%;
-    height: 70%;
+    width: 30px;
+    height: 30px;
   }
   
   .negative-change {
@@ -78,7 +76,7 @@ body {
   }
   
   .positive-change {
-    color: green;
+    color: rgba(0, 255, 0, 0.774);
   }
 
   .separator {
@@ -94,17 +92,26 @@ body {
     display: flex;
   }
   
-  .div-inputs{
+  .div-inputs {
     width: fit-content;
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     margin: 8px 16px;
-  }
+}
   
   .div-inputs input {
     margin-left: 4px;
     margin-right: 4px;
     text-align: center;
   }
+  .div-inputs input[type=number] {
+    border-radius: 10px;
+    height: 50%;
+}
+.div-inputs input[type=text] {
+  border-radius: 10px;
+    height: 50%;
+}
   
   input[type=number],
   input[type=text]:disabled{
