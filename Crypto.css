@@ -90,6 +90,7 @@ body {
   .div-content{
     width: 100%;
     display: flex;
+      position: relative;
   }
   
   .div-inputs {
@@ -128,3 +129,24 @@ body {
     height: 35px;
     margin: 0;
   }
+  .hidden {
+    display: none;
+}
+
+.div-content {
+  position: relative;
+}
+
+.pushed {
+  transform: translateY(180px); /* Adjust the amount of translation as needed */
+}
+
+.additional-info {
+  position: absolute;
+  top: 100%; /* Position below the clicked coin */
+  left: 0;
+  width: 100%; /* Full width */
+  margin-top: 5px; /* Adjust as needed */
+  padding: 5px;
+  border: 1px solid #ccc;
+}

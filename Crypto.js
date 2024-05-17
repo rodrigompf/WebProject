@@ -42,10 +42,44 @@ xhr.onload = function () {
         logoImg.style.height = '30px';
         logoDiv.appendChild(logoImg);
 
-        // Adicionar um ouvinte de eventos para redirecionar para a página respetiva ao clicar
+        
+
+        // Add a class to all other coins when one is clicked
         divPrincipal.addEventListener('click', function () {
-            window.location.href = `pagina_${item}.html`;
-        });
+    let additionalInfo = divPrincipal.nextElementSibling;
+    const allCoins = document.querySelectorAll('.div-content');
+    const currentIndex = Array.from(allCoins).indexOf(divMoeda);
+    
+    if (additionalInfo && additionalInfo.classList.contains('additional-info')) {
+        // Toggle visibility
+        additionalInfo.classList.toggle('hidden');
+        // Toggle the pushed class for coins below
+        for (let i = currentIndex + 1; i < allCoins.length; i++) {
+            allCoins[i].classList.toggle('pushed');
+        }
+    } else {
+        // Create and append additional information div
+        additionalInfo = document.createElement('div');
+        additionalInfo.className = 'additional-info';
+
+        const infoText = document.createElement('p');
+        infoText.textContent = `Additional information about ${item}`;
+        additionalInfo.appendChild(infoText);
+
+        const graphic = document.createElement('img');
+        graphic.src = `graphics/${item}.png`; // Replace with the actual path to your graphic
+        graphic.style.width = '100px';
+        graphic.style.height = '100px';
+        additionalInfo.appendChild(graphic);
+
+        divMoeda.insertBefore(additionalInfo, divPrincipal.nextSibling);
+        
+        // Add pushed class to coins below
+        for (let i = currentIndex + 1; i < allCoins.length; i++) {
+            allCoins[i].classList.add('pushed');
+        }
+    }
+});
 
         // Anexar elementos aos respetivos contentores pais
         divPrincipal.appendChild(logoDiv);
