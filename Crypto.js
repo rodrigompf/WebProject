@@ -62,19 +62,22 @@ xhr.onload = function () {
         additionalInfo = document.createElement('div');
         additionalInfo.className = 'additional-info';
 
+        const infoTitler = document.createElement('p');
+        infoTitler.textContent = `${item}`;
+        additionalInfo.appendChild(infoTitler);
         const infoText = document.createElement('p');
-        infoText.textContent = `Additional information about ${item}`;
+        infoText.textContent = `${item}`;
         additionalInfo.appendChild(infoText);
 
+
         const graphic = document.createElement('img');
-        graphic.src = `graphics/${item}.png`; // Replace with the actual path to your graphic
+        graphic.src = `graphics/${item}.png`;
         graphic.style.width = '100px';
         graphic.style.height = '100px';
         additionalInfo.appendChild(graphic);
 
         divMoeda.insertBefore(additionalInfo, divPrincipal.nextSibling);
-        
-        // Add pushed class to coins below
+
         for (let i = currentIndex + 1; i < allCoins.length; i++) {
             allCoins[i].classList.add('pushed');
         }
