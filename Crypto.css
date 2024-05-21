@@ -150,3 +150,29 @@ body {
   padding: 5px;
   border: 1px solid #ccc;
 }
+
+.chart-container {
+  position: relative;
+  height: 400px; /* Altura fixa para o contêiner do gráfico */
+  width: 100%;
+  z-index: 10; /* Z-index elevado para garantir que o gráfico fique na frente */
+}
+.hidden {
+  display: none;
+}
+.additional-info {
+  position: relative;
+  z-index: 5; /* Z-index menor que o contêiner do gráfico */
+}
+.div-content.pushed {
+  margin-top: 20px; /* Espaçamento extra para evitar sobreposição */
+}
+.Moeda {
+  position: relative;
+  z-index: 1;
+}
+      
+        
+       
+
+        
