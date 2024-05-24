@@ -89,6 +89,7 @@ body {
   
   .div-content{
     width: 100%;
+    height: 150px;
     display: flex;
       position: relative;
   }
@@ -141,29 +142,31 @@ body {
   transform: translateY(180px); /* Adjust the amount of translation as needed */
 }
 
-.additional-info {
-  position: absolute;
-  top: 100%; /* Position below the clicked coin */
-  left: 0;
-  width: 100%; /* Full width */
-  margin-top: 5px; /* Adjust as needed */
-  padding: 5px;
-  border: 1px solid #ccc;
+.chart-container {
+  position: fixed; /* Change to fixed positioning */
+  top: 50%; /* Position it in the vertical center of the viewport */
+  left: 50%; /* Position it in the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Center the chart container */
+  height: 400px; /* Fixed height for the chart container */
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Limit maximum width for better responsiveness */
+  z-index: 1000; /* Higher z-index to ensure the chart stays on top */
+  border: 1px solid #ccc; /* Add border around the chart */
+  border-radius: 10px; /* Optional: add border radius for better appearance */
+  background-color: #fff; /* Optional: add background color */
 }
 
-.chart-container {
-  position: relative;
-  height: 400px; /* Altura fixa para o contêiner do gráfico */
-  width: 100%;
-  z-index: 10; /* Z-index elevado para garantir que o gráfico fique na frente */
+.additional-info {
+  position: relative; /* Change to relative positioning */
+  width: 100%; /* Full width */
+  padding: 10px; /* Adjusted padding for better appearance */
+  border: 1px solid #ccc;
+  z-index: 999; /* Ensure the additional info stays on top of other content */
 }
 .hidden {
   display: none;
 }
-.additional-info {
-  position: relative;
-  z-index: 5; /* Z-index menor que o contêiner do gráfico */
-}
+
 .div-content.pushed {
   margin-top: 20px; /* Espaçamento extra para evitar sobreposição */
 }
