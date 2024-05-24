@@ -1,0 +1,40 @@
+header {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    display: inline-flex;
+    background-color: rgba(166, 156, 19, 0.651);
+    height: 12vh;
+    background-image: url(./imagensdasmoedas/);
+    background-repeat: no-repeat;
+    background-position: 16% 50%;
+    color: #ffffff;
+}
+
+header h2 {
+    padding-left: 5%;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+        display: inline-flex;
+        background-color: rgba(0, 0, 0, 0.651);
+        height: 15vh;
+        background-image: url(./imagensdasmoedas/);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+    }
+    
+    header h2 {
+        padding-left: 5%;
+        color: #ffffff;
+        font-size: 80%;
+    }
+  }
