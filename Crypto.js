@@ -53,9 +53,7 @@ xhr.onload = function () {
                     additionalInfo = document.createElement('div');
                     additionalInfo.className = 'additional-info';
 
-                    const infoTitler = document.createElement('p');
-                    infoTitler.textContent = `${item}`;
-                    additionalInfo.appendChild(infoTitler);
+                    
 
                     const chartContainer = document.createElement('div');
                     chartContainer.className = 'chart-container';
