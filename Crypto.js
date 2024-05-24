@@ -1,4 +1,3 @@
-// Get ApiKey
 const apiKey = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Csolana%2Ctron%2Ctether%2Ckucoin-shares%2Cpepe%2Cdai%2Csei-network%2Ctezos%2Cretardio%2Cgigachad-2%2Cpedro-the-raccoon&vs_currencies=eur&include_24hr_change=true";
 
 let xhr = new XMLHttpRequest();
@@ -41,37 +40,41 @@ xhr.onload = function () {
 
             divPrincipal.addEventListener('click', function () {
                 let additionalInfo = divPrincipal.nextElementSibling;
-                const allCoins = document.querySelectorAll('.div-content');
-                const currentIndex = Array.from(allCoins).indexOf(divMoeda);
-
+                const allGraphics = document.querySelectorAll('.additional-info');
+            
                 if (additionalInfo && additionalInfo.classList.contains('additional-info')) {
                     additionalInfo.classList.toggle('hidden');
-                    for (let i = currentIndex + 1; i < allCoins.length; i++) {
-                        allCoins[i].classList.toggle('pushed');
-                    }
                 } else {
                     additionalInfo = document.createElement('div');
                     additionalInfo.className = 'additional-info';
-
-                    
-
+            
                     const chartContainer = document.createElement('div');
                     chartContainer.className = 'chart-container';
                     const chartCanvas = document.createElement('canvas');
                     chartCanvas.id = `${item}Chart`;
                     chartContainer.appendChild(chartCanvas);
                     additionalInfo.appendChild(chartContainer);
-
-                    divMoeda.insertBefore(additionalInfo, divPrincipal.nextSibling);
-
-                    for (let i = currentIndex + 1; i < allCoins.length; i++) {
-                        allCoins[i].classList.add('pushed');
-                    }
-
+            
+                    divPrincipal.insertAdjacentElement('afterend', additionalInfo);
+            
                     fetchCoinData(item, createChart);
                 }
+            
+                // Count the number of visible charts
+                let visibleCharts = 0;
+                allGraphics.forEach(graphic => {
+                    if (!graphic.classList.contains('hidden')) {
+                        visibleCharts++;
+                    }
+                });
+            
+                // Toggle justify-content based on the visibility of charts
+                if (visibleCharts === 0) {
+                    document.body.style.justifyContent = 'center';
+                } else {
+                    document.body.style.justifyContent = 'normal';
+                }
             });
-
             divPrincipal.appendChild(logoDiv);
             divValores.appendChild(ValorEuro);
             divValores.appendChild(EuroChange);

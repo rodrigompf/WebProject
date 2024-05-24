@@ -1,11 +1,13 @@
 body {
     margin: 0;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
     background-color: #333;
     background-image: 'https://i.pinimg.com/originals/1d/d5/96/1dd596926e2ac4272fd3b8e7218a2daf.gif';
   }
+  body.no-justify-center {
+    justify-content: flex-start; /* Change this to your preferred alignment when toggled */
+}
   .currency-name{
     color: black;
   }
@@ -39,18 +41,17 @@ body {
   }
 
   .currency {
-    width: 100%;
+    width:50%; /* Make each coin occupy half of the available width with some margin */
     padding: 12px;
     background-color: #2b5063 !important;
     border-radius: 11px;
-    margin: 35px    ;
+    margin: 8px; /* Adjust margin as needed */
     font-weight: bold;
     font-size: 16px;
     color: #8fffe3;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     transition: all 200ms ease-in-out;
     user-select: none;
   }
@@ -143,32 +144,23 @@ body {
 }
 
 .chart-container {
-  position: fixed; /* Change to fixed positioning */
-  top: 50%; /* Position it in the vertical center of the viewport */
-  left: 50%; /* Position it in the horizontal center of the viewport */
-  transform: translate(-50%, -50%); /* Center the chart container */
-  height: 400px; /* Fixed height for the chart container */
-  width: 80%; /* Adjust width as needed */
-  max-width: 800px; /* Limit maximum width for better responsiveness */
-  z-index: 1000; /* Higher z-index to ensure the chart stays on top */
-  border: 1px solid #ccc; /* Add border around the chart */
-  border-radius: 10px; /* Optional: add border radius for better appearance */
-  background-color: #fff; /* Optional: add background color */
+  position: fixed;
+  height: 30%; /* Altura fixa para o contêiner do gráfico */
+  width: 40%;
+  margin-left: 10px;
+  z-index: 10; /* Z-index elevado para garantir que o gráfico fique na frente */
 }
 
 .additional-info {
-  position: relative; /* Change to relative positioning */
-  width: 100%; /* Full width */
-  padding: 10px; /* Adjusted padding for better appearance */
-  border: 1px solid #ccc;
-  z-index: 999; /* Ensure the additional info stays on top of other content */
+  position: relative;
+  z-index: 5; /* Z-index menor que o contêiner do gráfico */
 }
 .hidden {
   display: none;
 }
 
 .div-content.pushed {
-  margin-top: 20px; /* Espaçamento extra para evitar sobreposição */
+
 }
 .Moeda {
   position: relative;
