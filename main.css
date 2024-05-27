@@ -1,59 +1,75 @@
 body {
-    margin: 0px;
-    top: 0px;
-    max-width: 100%;
-  }
-  h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 150%;
-  }
-  h2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 125%;
-  }
-  h3{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 111%;
-  }
-  p, h3, h4, h5, h6, a{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-  }
-  
-  .Apresentation {
-    align-items: left;
-    width: 100%;
-    height: 102vh;
-    background-image: url(./imagensdasmoedas/);
-    background-size: 100% 102.5vh;
-    background-repeat: no-repeat;
-    color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    transition: background-color 0.3s ease-in;
-    margin-top: -100px;
-    color: #ffffff;
-  }
-  
-  .Apresentation h1,.Apresentation h2, .Apresentation p{
-    padding-left: 20%;
-  }
-  
-  .Apresentation h1,h2,p{
-    color: rgb(0, 0, 0);
-  }
+  margin: 0px;
+  top: 0px;
+  max-width: 100%;
+  background-image: url('https://i.pinimg.com/originals/1d/d5/96/1dd596926e2ac4272fd3b8e7218a2daf.gif');
+  background-size: cover;
+  background-position: center;
+}
 
-  .Apresentation a:hover {
-    background-color: rgb(225, 232, 27);
-    transition: background-color 0.3s ease-in;
-  }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.119); /* Ajuste o valor da opacidade conforme necessário */
+  z-index: 1;
+}
 
-  .Apresentation a {
-    text-decoration: none;
-    color: inherit;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: rgba(166, 156, 19, 0.651);
-  }
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 150%;
+}
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 125%;
+}
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 111%;
+}
+p, h3, h4, h5, h6, a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+.Apresentation {
+  align-items: left;
+  width: 100%;
+  height: 102vh;
+  background-image: url(./imagensdasmoedas/);
+  background-size: 100% 102.5vh;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  transition: background-color 0.3s ease-in;
+  margin-top: -150px; /* Ajuste a margem superior conforme necessário */
+  padding-top: 50px; /* Adicionado para mover o conteúdo para cima */
+  color: #ffffff;
+}
+
+.Apresentation h1, .Apresentation h2, .Apresentation p {
+  padding-left: 20%;
+}
+
+.Apresentation h1, h2, p {
+  color: #011b27;
+}
+
+.Apresentation a:hover {
+  background-color: #333;
+  transition: background-color 0.3s ease-in;
+}
+
+.Apresentation a {
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #2b5063;
+}
