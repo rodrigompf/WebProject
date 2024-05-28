@@ -55,7 +55,8 @@ xhr.onload = function () {
                     chartContainer.appendChild(chartCanvas);
                     additionalInfo.appendChild(chartContainer);
             
-                    divPrincipal.insertAdjacentElement('afterend', additionalInfo);
+                    // Append additionalInfo to divPrincipal's parent div
+                    divPrincipal.parentElement.appendChild(additionalInfo);
             
                     fetchCoinData(item, createChart);
                 }
