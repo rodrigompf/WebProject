@@ -136,6 +136,10 @@ body {
 }
 
 .div-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -152,8 +156,12 @@ body {
 }
 
 .additional-info {
-  position: relative;
-  z-index: 5; /* Z-index menor que o contêiner do gráfico */
+  display: none; /* Initially hidden */
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 10px; /* Adjust this for spacing */
+  width: 400px; /* Adjust this to your preference */
 }
 .hidden {
   display: none;
