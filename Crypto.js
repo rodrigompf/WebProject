@@ -189,4 +189,7 @@ function createChart(prices, coinId) {
             }
         }
     });
+
+    const additionalInfo = document.querySelector(`#${coinId}Chart`).parentElement;
+    additionalInfo.classList.add('fixed-chart'); // Add a class to apply fixed positioning
 }
